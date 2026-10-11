@@ -1,6 +1,6 @@
 {
-  "domains": [
-    "example.com"
-  ],
-  "max_results": 100
+“domains”: [
+“example.com”
+],
+“max_results”: 100
 }
