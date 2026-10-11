@@ -16,16 +16,20 @@ jobs:
       - name: リポジトリを取得
         uses: actions/checkout@v4
 
-      - name: Pythonをセットアップ
-        uses: actions/setup-python@v5
+      - name: Node.jsをセットアップ
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: "22"
+          cache: npm
 
-      - name: 必要なライブラリをインストール
-        run: pip install -r requirements.txt
+      - name: 依存関係をインストール
+        run: npm install
 
-      - name: URL収集プログラムを実行
-        run: python collector.py
+      - name: URL収集を実行
+        run: node collector.js
+        env:
+          X_AUTH_TOKEN: ${{ secrets.X_AUTH_TOKEN }}
+          X_CSRF_TOKEN: ${{ secrets.X_CSRF_TOKEN }}
 
       - name: 収集結果を保存
         run: |
