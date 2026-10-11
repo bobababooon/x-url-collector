@@ -1,0 +1,9 @@
+{
+  "name": "x-url-collector",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "xactions": "latest"
+  }
+}
